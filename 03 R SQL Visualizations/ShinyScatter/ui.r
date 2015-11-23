@@ -9,15 +9,15 @@ dashboardPage(
   ),
   dashboardSidebar(
     sidebarMenu(
-      menuItem("Crosstab", tabName = "crosstab", icon = icon("dashboard")),
-      menuItem("Barchart", tabName = "barchart", icon = icon("th")),
+      menuItem("ScatterPlot", tabName = "ScatterPlot", icon = icon("dashboard")),
+      menuItem("CrossTab", tabName = "CrossTab", icon = icon("th")),
       menuItem("Blending", tabName = "blending", icon = icon("th"))
     )
   ),
   dashboardBody(
     tabItems(
       # First tab content
-      tabItem(tabName = "crosstab",
+      tabItem(tabName = "ScatterPlot",
               #actionButton(inputId = "light", label = "Light"),
               #actionButton(inputId = "dark", label = "Dark"),
               sliderInput("KPI1", "Rated_Horsepower_value:", 
@@ -27,13 +27,20 @@ dashboardPage(
                         value = "Rated Horse Power"),
               actionButton(inputId = "clicks1",  label = "Click me"),
               plotOutput("distPlot1")
-      )#,
+      ),
       
       # Second tab content
-      #tabItem(tabName = "barchart",
-      #        actionButton(inputId = "clicks2",  label = "Click me"),
-      #        plotOutput("distPlot2")
-      #),
+      tabItem(tabName = "CrossTab",
+              actionButton(inputId = "light", label = "Light"),
+              actionButton(inputId = "dark", label = "Dark"),
+              sliderInput("Efficient", "Rated_Horsepower_value:", 
+                          min = 1, max = 150,  value = 90),
+              textInput(inputId = "title2", 
+                        label = "Crosstab Title",
+                        value = "Rated Horse Power"),
+              actionButton(inputId = "clicks2",  label = "Click me"),
+              plotOutput("distPlot2")
+      )#,
       
       # Third tab content
       #tabItem(tabName = "blending",
