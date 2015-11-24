@@ -1,0 +1,33 @@
+---
+title: 'Project 6: Shiny Dashboard App'
+output: html_document
+---  
+
+#### This html page, produced by creating an R markdown document, and using KnitR to knit the file into html. The purpose of this html file, is to show our analysis of our data set in Tableau and R Studio. Using Shiny, we incorporated the visualizations into Shiny apps that are clickable. The data set is test car information including, horse power, emissions, engine size, and safety ratings. This html also shows the steps required to reproduce our findings, given the same data. Given the variables in our data set, we were able to query the data base in a few different ways and use Shiny and R to create visualizations to better analyze the data. .
+
+
+
+#### Shiny App:
+URL: [https://kappelblake.shinyapps.io/DV_app](https://kappelblake.shinyapps.io/DV_app)
+
+##### Rprofile.R:
+An Rprofile.R document was created to include all of the packages required for the project, in order to avoid requiring packages in each of the R script files. Below is the call to the Rprofile document, and shows the necessary packages being loaded:
+
+
+```{r}
+source("../Rprofile.R", echo = FALSE)
+```
+
+
+
+#### Scatter Plot:
+Our first visualization is of a subset of the data. The graph is a scatter plot showing horse power on the x-axis and CO2 emissions on the y-axis. As expected there is a positive correlation between the two measure variables. The visualization shows a trend of increased carbon dioxide emissions with increases in horesepower. The colors represent different vehicle types. The slider input allows the user to change the range of horse powerin the visualization.
+
+#### Bar Chart:
+Our bar chart shows a representation of vehicle manufacturers vs their sum of rated horse power. The average of all manufacturer horsepower is a line through the bar graph. The average of each manufacturer is also displayed along with the data, although it appears jumbled at the bottom because we were not able to make the labels appear properly above each bar.
+
+
+#### Cross-Tab :
+For our cross-tab visualization, we wanted to observe a cross tab of vehicle types, car makes, and the calculated engine efficiency of the vehicles. Engine efficiency was calculated by dividing the horsepower by the engine displacement, or size of the engine in Liters. Parameters were set for high and low engine efficiency and used to compare all of the vehicles in the cross-tab. The slider bar allows the user to adjust the mid-value of rated horesepower for the vehicles, which determines whether they are low or high efficiency.
+
+
